@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Next: Chrome",
+            "url": "http://localhost:3001",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Next: Node",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/next",
+            "runtimeArgs": [
+                // set custom port to run 
+                "-p",
+                "3001"
+            ],
+            "port": 9229,
+            "env": {
+                "NODE_OPTIONS": "--inspect"
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Next: Full",
+            "configurations": [
+                "Next: Node",
+                "Next: Chrome"
+            ]
+        }
+    ]
+}
